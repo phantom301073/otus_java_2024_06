@@ -4,7 +4,6 @@
 package ru.otus;
 
 import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.List;
 

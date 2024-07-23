@@ -3,13 +3,13 @@ package homework;
 import java.util.*;
 
 public class CustomerReverseOrder {
-    LinkedHashSet<Customer> customerSet = new LinkedHashSet<>();
+    private final Deque<Customer> customerDeque = new LinkedList<>();
 
     public void add(Customer customer) {
-        customerSet.add(customer);
+        customerDeque.add(customer);
     }
 
     public Customer take() {
-        return customerSet.reversed().removeFirst();
+        return customerDeque.removeLast();
     }
 }

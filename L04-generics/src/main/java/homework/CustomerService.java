@@ -4,14 +4,16 @@ import java.util.*;
 
 public class CustomerService {
 
-    NavigableMap<Customer, String> customerStringTreeMap = new TreeMap<>();
+    private final NavigableMap<Customer, String> customerStringTreeMap = new TreeMap<>();
 
     public Map.Entry<Customer, String> getSmallest() {
         return getCustomerStringSimpleEntry(customerStringTreeMap.firstEntry());
     }
 
     public Map.Entry<Customer, String> getNext(Customer customer) {
-        if(customerStringTreeMap.lastEntry().getKey().compareTo(customer) < 0) return null;
+        if (customerStringTreeMap.higherEntry(customer) == null) {
+            return null;
+        }
         return getCustomerStringSimpleEntry(customerStringTreeMap.higherEntry(customer));
     }
 

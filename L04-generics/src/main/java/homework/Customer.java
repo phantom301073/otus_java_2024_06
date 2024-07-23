@@ -2,7 +2,7 @@ package homework;
 
 import java.util.Objects;
 
-public class Customer implements Comparable {
+public class Customer implements Comparable<Customer> {
     private final long id;
     private String name;
     private long scores;
@@ -56,8 +56,7 @@ public class Customer implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Customer customer = (Customer) o;
-        return Long.compare(getScores(), customer.getScores());
+    public int compareTo(Customer other) {
+        return Long.compare(getScores(), other.getScores());
     }
 }

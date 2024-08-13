@@ -16,6 +16,8 @@ include("L06-annotations")
 
 include("L08-gc")
 
+include("L09-docker")
+
 pluginManagement {
     val jgitver: String by settings
     val dependencyManagement: String by settings
